@@ -1,0 +1,42 @@
+.nav-wrapper {
+    display: flex;
+    justify-content: start;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#nav, #nav2 {
+    margin: 0;
+    padding: 16px;
+    border: 1px solid black;
+}
+
+#nav {
+    background-color: blueviolet;
+    border-radius: 0 8px 0 0; /* Adjusted to look better next to the second nav */
+}
+
+#nav2 {
+    background-color: orange; /* Example color for differentiation */
+    padding: 16px; /* Consistency in padding */
+    border-radius: 0 8px 8px 0; /* Styling for the right side */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    background-color: aqua;
+    margin-top: 50px; /* Make space for the absolute positioned nav */
+}
+title {
+    font-family: 'Calibri', sans-serif;
+    position: relative;
+    left: 80px ;
+    top: 2px;
+    
+}
