@@ -1,25 +1,30 @@
 .nav-wrapper {
     display: grid;
-    grid-template-columns: auto auto; /* Adjust to manage space between nav and video */
-    justify-content: space-between; /* This spreads out the nav and the video to opposite ends */
+    grid-template-columns: auto auto; /* Keeps nav and video on opposite ends */
+    justify-content: start; /* Aligns content to the start of the grid */
+    align-items: start; /* Aligns items to the start vertically */
     width: 100%;
-    position: relative; /* Changed from absolute to relative */
+    position: relative; /* Ensures positioning within the flow of the document */
+    padding: 0; /* Removes padding inside the nav-wrapper */
 }
 
-#nav, #nav2 {
+#nav {
     margin: 0;
     padding: 16px;
     border: 1px solid black;
     display: flex;
     justify-content: center;
+    background-color: blueviolet;
+    border-radius: 8px 0 0 0; /* Rounded top left corner */
+    grid-column: 1; /* Ensures nav is placed in the first column */
 }
 
 #videoContainer {
     justify-self: end; /* Aligns the video container to the right */
     padding-right: 20px; /* Adjust the padding as needed */
-    position: absolute; /* Makes the video container break out of the normal flow */
-    right: 0; /* Aligns the container to the right */
-    top: 0; /* Aligns the container to the top */
+    position: absolute; /* Ensures the video is positioned absolutely within the nav-wrapper */
+    right: 0; /* Aligns the container to the right edge */
+    top: 0; /* Aligns the container to the top edge */
 }
 
 div img {
@@ -34,25 +39,15 @@ div {
     flex-wrap: wrap; /* Allow the images to wrap onto the next line if there's not enough space */
 }
 
-#nav {
-    background-color: blueviolet;
-    border-radius: 8px 0 0 0; /* Rounded top left corner */
-}
-
-#nav2 {
-    background-color: orange;
-    padding: 16px;
-    border-radius: 0 8px 0 0; /* Rounded top right corner */
-}
-
 body {
+    margin: 0; /* Removes the default margin */
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     min-height: 100vh;
     background-color: aqua;
-    padding-top: 50px; /* Adjusted to accommodate the nav bar */
+    padding-top: 50px; /* Adjust if needed to accommodate the nav bar at the top */
 }
 
 h1#title {
