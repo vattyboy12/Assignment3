@@ -1,27 +1,48 @@
 .nav-wrapper {
-    display: flex;
-    justify-content: start;
+    display: grid;
+    grid-template-columns: auto auto; /* Adjust to manage space between nav and video */
+    justify-content: space-between; /* This spreads out the nav and the video to opposite ends */
     width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative; /* Changed from absolute to relative */
 }
 
 #nav, #nav2 {
     margin: 0;
     padding: 16px;
     border: 1px solid black;
+    display: flex;
+    justify-content: center;
+}
+
+#videoContainer {
+    justify-self: end; /* Aligns the video container to the right */
+    padding-right: 20px; /* Adjust the padding as needed */
+    position: absolute; /* Makes the video container break out of the normal flow */
+    right: 0; /* Aligns the container to the right */
+    top: 0; /* Aligns the container to the top */
+}
+
+div img {
+    width: 30%; /* Adjust the width as needed */
+    padding: 5px; /* Add some space around the images */
+    box-sizing: border-box;
+}
+
+div {
+    display: flex;
+    justify-content: center; /* Center the images */
+    flex-wrap: wrap; /* Allow the images to wrap onto the next line if there's not enough space */
 }
 
 #nav {
     background-color: blueviolet;
-    border-radius: 0 8px 0 0; /* Adjusted to look better next to the second nav */
+    border-radius: 8px 0 0 0; /* Rounded top left corner */
 }
 
 #nav2 {
-    background-color: orange; /* Example color for differentiation */
-    padding: 16px; /* Consistency in padding */
-    border-radius: 0 8px 8px 0; /* Styling for the right side */
+    background-color: orange;
+    padding: 16px;
+    border-radius: 0 8px 0 0; /* Rounded top right corner */
 }
 
 body {
@@ -31,12 +52,41 @@ body {
     text-align: center;
     min-height: 100vh;
     background-color: aqua;
-    margin-top: 50px; /* Make space for the absolute positioned nav */
+    padding-top: 50px; /* Adjusted to accommodate the nav bar */
 }
-title {
+
+h1#title {
     font-family: 'Calibri', sans-serif;
-    position: relative;
-    left: 80px ;
-    top: 2px;
-    
+    margin-top: 20px; /* Adjusting spacing */
+}
+
+p#para {
+    max-width: 600px; /* Limits the width of paragraph for better readability */
+    padding: 20px; /* Adds some padding */
+    font-size: larger;
+}
+
+/* Media Query for Tablets */
+@media (max-width: 768px) {
+    .nav-wrapper {
+        grid-template-columns: 1fr; /* Stacks nav items on smaller screens */
+    }
+
+    p#para {
+        padding: 10px;
+        font-size: medium; /* Adjusts font size for better readability */
+    }
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 480px) {
+    body {
+        padding-top: 40px; /* Adjusts padding to ensure content is visible */
+    }
+
+    h1#title, p#para {
+        padding: 10px;
+        margin: 10px;
+        font-size: small; /* Further adjusts font size for smaller screens */
+    }
 }
