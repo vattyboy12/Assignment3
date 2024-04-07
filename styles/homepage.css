@@ -1,3 +1,17 @@
+:root {
+    --main-bg-color: aqua;
+    --nav-bg-color: blueviolet;
+    --border-color: black;
+    --nav-padding: 16px;
+    --video-padding-right: 20px;
+    --base-padding: 5px;
+    --font-family: 'Calibri', sans-serif;
+    --base-font-size: larger;
+    --padding-top-body: 50px;
+    --margin-standard: 0;
+    --border-standard: 1px solid var(--border-color);
+    --border-radius-top-left: 8px 0 0 0;
+}
 .nav-wrapper {
     display: grid;
     grid-template-columns: auto auto; /* Keeps nav and video on opposite ends */
@@ -5,31 +19,31 @@
     align-items: start; /* Aligns items to the start vertically */
     width: 100%;
     position: relative; /* Ensures positioning within the flow of the document */
-    padding: 0; /* Removes padding inside the nav-wrapper */
+    padding: var(--margin-standard); /* Utilizes variable for padding */
 }
 
 #nav {
-    margin: 0;
-    padding: 16px;
-    border: 1px solid black;
+    margin: var(--margin-standard);
+    padding: var(--nav-padding);
+    border: var(--border-standard);
     display: flex;
     justify-content: center;
-    background-color: blueviolet;
-    border-radius: 8px 0 0 0; /* Rounded top left corner */
+    background-color: var(--nav-bg-color);
+    border-radius: var(--border-radius-top-left); /* Rounded top left corner */
     grid-column: 1; /* Ensures nav is placed in the first column */
 }
 
 #videoContainer {
     justify-self: end; /* Aligns the video container to the right */
-    padding-right: 20px; /* Adjust the padding as needed */
+    padding-right: var(--video-padding-right); /* Uses variable for padding */
     position: absolute; /* Ensures the video is positioned absolutely within the nav-wrapper */
-    right: 0; /* Aligns the container to the right edge */
-    top: 0; /* Aligns the container to the top edge */
+    right: var(--margin-standard); /* Aligns the container to the right edge */
+    top: var(--margin-standard); /* Aligns the container to the top edge */
 }
 
 div img {
     width: 30%; /* Adjust the width as needed */
-    padding: 5px; /* Add some space around the images */
+    padding: var(--base-padding); /* Uses variable for padding */
     box-sizing: border-box;
 }
 
@@ -40,25 +54,25 @@ div {
 }
 
 body {
-    margin: 0; /* Removes the default margin */
+    margin: var(--margin-standard); /* Utilizes variable for margin */
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     min-height: 100vh;
-    background-color: aqua;
-    padding-top: 50px; /* Adjust if needed to accommodate the nav bar at the top */
+    background-color: var(--main-bg-color);
+    padding-top: var(--padding-top-body); /* Uses variable for padding */
 }
 
 h1#title {
-    font-family: 'Calibri', sans-serif;
+    font-family: var(--font-family);
     margin-top: 20px; /* Adjusting spacing */
 }
 
 p#para {
     max-width: 600px; /* Limits the width of paragraph for better readability */
     padding: 20px; /* Adds some padding */
-    font-size: larger;
+    font-size: var(--base-font-size);
 }
 
 /* Media Query for Tablets */
