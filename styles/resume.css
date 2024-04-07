@@ -1,0 +1,68 @@
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: peachpuff;
+    display: grid;
+    grid-template-columns: 1fr; /* Start with a single column layout */
+    grid-gap: 20px; /* Space between grid items */
+    padding: 20px;
+}
+
+/* Grid adjustments for larger screens */
+@media (min-width: 768px) {
+    body {
+        grid-template-columns: 3fr 1fr; /* Allocate more space to main content than to the aside */
+        grid-gap: 40px; /* Increase space between grid items */
+    }
+}
+
+/* Additional responsive styles */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 24px;
+        padding: 20px;
+    }
+
+    .titles {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 992px) {
+    h1 {
+        font-size: 28px;
+        padding: 30px;
+    }
+
+    .titles {
+        font-size: 20px;
+    }
+}
+
+
+h1 {
+    color: beige;
+    background-color: rebeccapurple;
+    padding: 50px;
+}
+
+#header, #header2, #header3, #header4 {
+    color: beige;
+}
+
+#header {
+    background-color: goldenrod;
+}
+
+#header2 {
+    background-color: crimson;
+}
+
+#header3, #header4,#header5 {
+    background-color: darkgreen;
+    color: aliceblue;
+}
+
+.titles {
+    background-color: darkkhaki;
+}
+
